@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>suzuφathenaeum</title>
+    <link rel="stylesheet" href="style.css">
+<script>if(localStorage.getItem("theme")==="dark")document.documentElement.classList.add("dark");</script>
+</head>
+<body>
+    <header>
+        <h1>suzuφathenaeum</h1>
+        <span class="hamburger" id="hamburger" onclick="toggleSidebar()">&#9776;</span>
+    </header>
+
+    <div class="site-layout">
+        <!-- サイドバー -->
+        <aside class="sidebar">
+            <nav>
+                <ul>              
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile/index.html">Profile</a></li>
+                    <li><a href="essay/index.html">Essay</a></li>
+                    <li><a href="gallery/index.html">Gallery</a></li>
+                    <li><a href="essentials/index.html">Essentails</a></li>
+                    <li><a href="studies/index.html">Studies</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- メインコンテンツ -->
+        <main class="content">
+            <h2>どうもこんにちは</h2>
+            <p>できるだけ簡潔なテキストベースのサイト作りを目指しています</p>
+
+            <div id="owl-game"></div>
+
+            <p>更新履歴<br>
+                ＊Diary/Gallery随時更新中＊<br>
+                2026/10/28　SongWritingを追加。Diary以外も適宜・随時更新中。
+            </p>
+            <details id="update-history">
+                <summary>過去の更新を見る</summary>
+                <p>
+                    2026/10/9　過去記事rftdからtxtに抽出して並べ替え、全体のエラー箇所を修正（全てClaude）<br>
+                    2026/8/28　TopとSongWritingにYouTube動画を貼り付け<br>
+                    2026/7/14　ギタービルドのページを更新<br>
+                    2026/7/7　トップページにデジモン風ゲームを追加し、Studiesに詳細を記載<br>
+                    2026/6/27　ギャラリーにギタービルドのページを追加<br>
+                    2026/6/12　トップページにマスコットを設置<br>
+                    2026/6/11　検索窓、ダークモード、目次を実装<br>
+                    2026/4/2　SongwritingをSunoAI使って更新中<br>
+                    2026/3/26　GitHubで構造を公開<br>
+                    2025/12/29　やっとArchiveの抜粋・移行が終了（だいぶ減らした）<br>
+                    2025/11/17　Studiesに「じゆうけんきゅう」コラムを追加<br>
+                    2025/3/11　Archiveを移行しつつ、とりあえずDiaryは運用中<br>
+                    2025/2/13　Studiesコラム完成、cssデザイン調整<br>
+                    2025/2/11　一通りの構成が完成
+                </p>
+            </details>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/plbq0jxe8dA?si=yDxnZGkHU4IhpR8m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; suzumaro</p>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        }
+    </script>
+<script>(function(){var l=document.querySelector('link[rel="stylesheet"]');if(l){var s=document.createElement("script");s.src=l.href.replace("style.css","main.js")+"?v=20260612";document.head.appendChild(s);}}());</script>
+<script src="owl-config.js"></script>
+<script src="owl-game.js?v=20261009"></script>
+</body>
+</html>
