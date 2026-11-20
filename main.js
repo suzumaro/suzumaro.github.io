@@ -488,12 +488,45 @@
     }
 
     // ==================
+    // 埋め込みによるスクロール飛び防止
+    // 一部のYouTube埋め込みは読み込み時にフォーカスを奪い、ブラウザが
+    // その位置（ページ下部）まで自動スクロールしてしまう。
+    // 閲覧者がまだ操作していない間に、フォーカスがiframeへ移ったことで
+    // 起きたスクロールだけを元の位置に戻す。
+    // ==================
+
+    function initIframeFocusGuard() {
+        if (!document.querySelector('iframe')) return;
+        var acted = false;
+        // main.js より先にフォーカスを奪われていた場合も先頭（またはリンク先の記事）に戻す
+        if (document.activeElement && document.activeElement.tagName === 'IFRAME') {
+            document.activeElement.blur();
+            var target = location.hash && document.getElementById(location.hash.slice(1));
+            if (target) target.scrollIntoView(); else window.scrollTo(0, 0);
+        }
+        var lastY = window.scrollY;
+        ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(function (type) {
+            window.addEventListener(type, function () { acted = true; }, { capture: true, passive: true });
+        });
+        window.addEventListener('scroll', function () {
+            var a = document.activeElement;
+            if (!acted && a && a.tagName === 'IFRAME') {
+                a.blur();
+                window.scrollTo(0, lastY);
+            } else {
+                lastY = window.scrollY;
+            }
+        }, { passive: true });
+    }
+
+    // ==================
     // Init
     // ==================
 
     function init() {
         initDarkMode();
         initTOC();
+        initIframeFocusGuard();   // 目次のidが振られた後に実行
         initSearch();
         initSiteSearch();
         initBackToTop();
