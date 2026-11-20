@@ -11,10 +11,10 @@
     --sidebar-link: #0056b3;
     --content-bg:   white;
     --shadow:       rgba(0, 0, 0, 0.1);
-    --link:         #007bff;
-    --link-hover:   #ff6600;
+    --link:         #0066cc;   /* 白背景で 5.6:1（旧 #007bff は 4.0:1） */
+    --link-hover:   #c75000;   /* 白背景で 4.6:1（旧 #ff6600 は 2.9:1） */
     --link-visited: #551a8b;
-    --btn-bg:       #007bff;
+    --btn-bg:       #0066cc;
     --btn-hover:    #0056b3;
     --border:       #cce0ff;
     --input-bg:     white;
