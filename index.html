@@ -10,12 +10,12 @@
 <body>
     <header>
         <h1>suzuφathenaeum</h1>
-        <span class="hamburger" id="hamburger" onclick="toggleSidebar()">&#9776;</span>
+        <button type="button" class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="メニューを開閉" aria-controls="site-sidebar">&#9776;</button>
     </header>
 
     <div class="site-layout">
         <!-- サイドバー -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="site-sidebar">
             <nav>
                 <ul>              
                     <li><a href="index.html">Home</a></li>
